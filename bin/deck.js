@@ -49,17 +49,20 @@ var Deck = /*#__PURE__*/function () {
       }
     }
   }, {
+    key: "addCard",
+    value: function addCard(card) {
+      this.cards.push(card);
+    }
+  }, {
     key: "draw",
     value: function draw(number) {
       var result = [];
 
-      if (Number.isInteger(number) && this.cards.length <= number) {
-        for (var i = 0; i <= number; i++) {
-          result.push(this.cards.pop());
-        }
-      } else {
-        console.log("cant draw that many cards, deck is empty!");
+      for (var i = 0; i <= number; i++) {
+        result.push(this.cards.pop());
       }
+
+      console.log("cant draw that many cards, deck is empty!");
     }
   }]);
 

@@ -4,6 +4,7 @@ export default class Deck {
     constructor(){
         this.cards = []
     }
+
     createDeck(){
         let suites = ['clubs', 'spades', 'hearts', 'diamonds']
         let names = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
@@ -15,6 +16,7 @@ export default class Deck {
             }
         }
     }
+
     shuffleDeck(){
         let location1, location2, tmp;
         for (let i = 0; i < 1000; i++) {
@@ -28,13 +30,17 @@ export default class Deck {
         }
     }
 
+    addCard(card){
+        this.cards.push(card)
+    }
+
     draw(number){
         var result = []
-        if (Number.isInteger(number) && (this.cards.length <= number)){
-            for (var i=0; i<=number;i++)
+        
+        for (var i=0; i<=number;i++)
                 result.push(this.cards.pop());
-        }else{
+        
             console.log("cant draw that many cards, deck is empty!")
-        }
+        
     }
 }
